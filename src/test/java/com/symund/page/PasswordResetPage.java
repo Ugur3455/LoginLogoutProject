@@ -1,6 +1,6 @@
-package com.cydeo.page;
+package com.symund.page;
 
-import com.cydeo.utilities.Driver;
+import com.symund.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

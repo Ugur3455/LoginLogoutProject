@@ -1,7 +1,6 @@
-package com.cydeo.step_definitions;
+package com.symund.step_definitions;
 
-import com.cydeo.utilities.BrowserUtils;
-import com.cydeo.utilities.Driver;
+import com.symund.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;

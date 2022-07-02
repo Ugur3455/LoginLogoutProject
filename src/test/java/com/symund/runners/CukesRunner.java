@@ -1,4 +1,4 @@
-package com.cydeo.runners;
+package com.symund.runners;
 
 
 import io.cucumber.junit.Cucumber;
@@ -7,14 +7,16 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:target/cucumber-reports.html",
+        plugin = {
+                "json:target/cucumber.json",
+                "html:target/cucumber-reports.html",
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
-        glue = "com/cydeo/step_definitions",
+        glue = "com/symund/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = "@51"
 )
 public class CukesRunner {
 }

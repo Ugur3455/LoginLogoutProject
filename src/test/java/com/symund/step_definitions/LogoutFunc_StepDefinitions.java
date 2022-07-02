@@ -1,8 +1,8 @@
-package com.cydeo.step_definitions;
+package com.symund.step_definitions;
 
-import com.cydeo.page.LoginPage;
-import com.cydeo.page.MainPage;
-import com.cydeo.utilities.Driver;
+import com.symund.page.LoginPage;
+import com.symund.page.MainPage;
+import com.symund.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -1,9 +1,9 @@
-package com.cydeo.step_definitions;
+package com.symund.step_definitions;
 
-import com.cydeo.page.LoginPage;
-import com.cydeo.page.MainPage;
-import com.cydeo.page.PasswordResetPage;
-import com.cydeo.utilities.Driver;
+import com.symund.page.LoginPage;
+import com.symund.page.MainPage;
+import com.symund.page.PasswordResetPage;
+import com.symund.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -75,16 +75,20 @@ public class LoginFunc_StepDefinitions {
 
     @Then("verify that {string} as default in username placeholder")
     public void verifyThatAsDefaultInUsernamePlaceholder(String arg0) {
-        Assert.assertEquals("Username or email",loginPage.username.getAttribute("placeholder"));
-        //System.out.println("loginPage.userPlaceholder.getText() = " + loginPage.userPlaceholder.getText());
+        Assert.assertEquals(arg0,loginPage.username.getAttribute("placeholder"));
     }
 
     @Then("verify that {string} as default in password placeholder")
     public void verifyThatAsDefaultInPasswordPlaceholder(String arg0) {
-        Assert.assertEquals("Password",loginPage.password.getAttribute("placeholder"));
+        Assert.assertEquals(arg0,loginPage.password.getAttribute("placeholder"));
     }
 
     @And("user leaves {string} in mail input")
     public void userLeavesInMailInput(String arg0) {
     }
+
+    @And("user clicks reset button")
+    public void userClicksResetButton() {
+    }
+
 }

@@ -1,14 +1,14 @@
 
 Feature: As a user, I should be able to login symund main page
 
-
+@1
   Scenario: User can login with valid credentials
     Given user navigates to the symund login page
     When user leaves "Employee71" in username
     And user leaves "Employee123" in password
     And user clicks login button
     Then verify that user can login
-
+@2
   Scenario Outline: User can not login with any invalid credentials (wrong and blank)
     Given user navigates to the symund login page
     When user leaves "<username>" in username
@@ -16,14 +16,17 @@ Feature: As a user, I should be able to login symund main page
     And user clicks login button
     Then verify that user cannot login with invalid credentials
 
+
     Examples:
       | username   | password    |
       | EmploYee71 | Employee123 |
+      | Employee71 | asd123      |
       | Employee71 | EmplYee123  |
       | mploye71   | Employee123 |
-      | Employee71 | asd123      |
       |            | Employee123 |
       |Employee71  |             |
+
+
 
 
   Scenario: User can see the password in a form of dots by default
@@ -46,6 +49,7 @@ Feature: As a user, I should be able to login symund main page
     And user leaves "Employee123" in password
     And user clicks forgot password button
     And user leaves "email" in mail input
+    And user clicks reset button
     Then verify that user can reset the password
 
   Scenario: User can see valid placeholders on Username and Password fields
