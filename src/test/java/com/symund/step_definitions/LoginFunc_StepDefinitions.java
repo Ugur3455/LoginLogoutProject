@@ -43,9 +43,13 @@ public class LoginFunc_StepDefinitions {
         Assert.assertEquals(expectedTitle,Driver.getDriver().getTitle());
     }
 
-    @Then("verify that user cannot login with invalid credentials")
-    public void verify_that_user_cannot_login_with_invalid_credentials() {
-         Assert.assertEquals("Symund - QA",Driver.getDriver().getTitle());
+    @Then("verify that user cannot login with invalid credentials and can see wrong username or password")
+    public void verify_that_user_cannot_login_with_invalid_credentials_and_can_see_wrong_username_or_password() {
+        if (Driver.getDriver().getTitle().equals("Symund - QA")) {
+            Assert.assertTrue(loginPage.message.isDisplayed());
+        } else {
+            Assert.assertEquals("Symund - QA", Driver.getDriver().getTitle());
+        }
     }
 
     @Then("verify that user sees the password in a form of dots by default")
@@ -91,4 +95,20 @@ public class LoginFunc_StepDefinitions {
     public void userClicksResetButton() {
     }
 
+
+    @Then("verify that user cannot login with blank credentials and can see please fill out message in username")
+    public void verifyThatUserCannotLoginWithBlankCredentialsAndCanSeePleaseFillOutMessageInUsername() {
+        boolean r1=Driver.getDriver().getTitle().equals("Symund - QA");
+        boolean r2=loginPage.username.getAttribute("required").equals("true");
+        boolean r=r1 && r2;
+        Assert.assertTrue(r);
+    }
+
+    @Then("verify that user cannot login with blank credentials and can see please fill out message in password;")
+    public void verifyThatUserCannotLoginWithBlankCredentialsAndCanSeePleaseFillOutMessageInPassword() {
+        boolean r1=Driver.getDriver().getTitle().equals("Symund - QA");
+        boolean r2=loginPage.password.getAttribute("required").equals("true");
+        boolean r=r1 && r2;
+        Assert.assertTrue(r);
+    }
 }
