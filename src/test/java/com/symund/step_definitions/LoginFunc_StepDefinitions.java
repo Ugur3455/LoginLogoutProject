@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 
 public class LoginFunc_StepDefinitions {
 
@@ -102,6 +103,8 @@ public class LoginFunc_StepDefinitions {
         boolean r2=loginPage.username.getAttribute("required").equals("true");
         boolean r=r1 && r2;
         Assert.assertTrue(r);
+        String message = loginPage.username.getAttribute("validationMessage");
+        System.out.println(message);
     }
 
     @Then("verify that user cannot login with blank credentials and can see please fill out message in password;")

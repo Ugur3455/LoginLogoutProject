@@ -5,7 +5,7 @@ Feature: As a user, I should be able to login symund main page
   Scenario: User can login with valid credentials
     Given user navigates to the symund login page
     When user leaves "Employee71" in username
-    And user leaves "Employee123" in password
+    And user leaves "Employee1" in password
     And user clicks login button
     Then verify that user can login
 @UND-1131
